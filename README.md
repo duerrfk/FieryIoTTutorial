@@ -333,7 +333,11 @@ The IoT gateway receives the credential from the web-server through an HTTP POST
 
 The credential is then used for authentication to Firebase as shown in function `function authenticateToFirebaseGoogleUser(idToken)`. The `idToken` is the data received from the web-server (proxy), which is converted to a credential object with `firebase.auth.GoogleAuthProvider.credential(idToken)`. With the command `firebase.auth().signInWithCredential(credential)`, the authentication with Firebase is triggered using this credential. If the authentication succeeds, the callback function `firebase.auth().onAuthStateChanged(function(user))` will be called with the signed in user. 
 
-Now, the IoT home gateway is ready to use the Firebase database for reading and writing data from/to the database.
+Now, the IoT home gateway is ready to use the Firebase database for reading and writing data from/to the database. You can start the IoT home gateway like this:
+
+```
+$ node iot-gateway.js
+```
 
 # Writing Data to the Database
 
